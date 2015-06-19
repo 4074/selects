@@ -1,0 +1,99 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>selects</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 800px;
+            margin: 100px auto;
+        }
+        .div {
+            margin-top: 10px;
+        }
+        .selects-select+.selects-select {
+            margin-left: 5px;
+        }
+        .form-control {
+            padding: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <input class="form-control input-sm input-value" value="11" />
+        <div class="div"></div>
+    </div>
+
+<script src="lib/jquery-1.10.2.js"></script>
+<script src="selects.js"></script>
+<script>
+    $('.input-value').selects({
+        container: '.div',
+        data: [{
+            value: 1,
+            text: '行政部',
+            attr: {
+                staff: 12
+            },
+            children: [{
+                value: 11,
+                text: '关怀组',
+                attr: {
+                    staff: 2
+                }
+            }, {
+                value: 12,
+                text: '采购组',
+                attr: {
+                    staff: 3
+                },
+                children: [{
+                    value: 121,
+                    text: '关怀组',
+                    attr: {
+                        staff: 2
+                    }
+                }, {
+                    value: 122,
+                    text: '采购组',
+                    attr: {
+                        staff: 3
+                    }
+                }]
+            }]
+        }, {
+            value: 2,
+            text: '信息中心',
+            attr: {
+                staff: 10
+            },
+            children: [{
+                value: 21,
+                text: '产品组',
+                attr: {
+                    staff: 2
+                }
+            }, {
+                value: 22,
+                text: '后台组',
+                attr: {
+                    staff: 5
+                }
+            }, {
+                value: 23,
+                text: '前端组',
+                attr: {
+                    staff: 1
+                }
+            }]
+        }],
+    })
+</script>
+</body>
+</html>
